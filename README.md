@@ -67,6 +67,44 @@ npm run dev
 # open http://localhost:3000
 ```
 
+### Option 2: Deploy to Render
+
+Deploy this application to Render with just a few clicks:
+
+1. **Fork or Clone** this repository to your GitHub account
+
+2. **Sign up/Login** to [Render](https://render.com)
+
+3. **Create a New Web Service**:
+   - Click "New +" → "Web Service"
+   - Connect your GitHub repository
+   - Select this repository
+
+4. **Configure Build Settings**:
+   ```
+   Name: os-fiesta (or your preferred name)
+   Environment: Node
+   Region: Select your closest region
+   Branch: master
+   Build Command: npm install && npm run build
+   Start Command: npm start
+   ```
+
+5. **Add Environment Variables** (Optional):
+   Go to "Environment" tab and add:
+   ```
+   OPENROUTER_API_KEY=your_openrouter_key
+   GEMINI_API_KEY=your_gemini_key
+   OLLAMA_URL=your_ollama_url (if using)
+   ```
+
+6. **Deploy**:
+   - Click "Create Web Service"
+   - Render will automatically build and deploy your app
+   - You'll get a live URL like: `https://your-app-name.onrender.com`
+
+**Note**: Render's free tier may have cold starts. For production use, consider upgrading to a paid plan for better performance.
+
 ## Environment Variables
 
 Set only those you need; others can be provided per-request from the UI:
